@@ -1,0 +1,85 @@
+常见的异常：
+
+java.lang.NullPointerException 空指针异常
+
+java.lang.IndexOutOfBoundsException 下表越界异常
+
+java.lang.ClassNotFoundException 找不到类异常
+
+java.lang.ClassCastException 数据类型转换异常
+
+java.lang.NumberFormatException 字符串转数字异常
+
+java.lang.NoSuchMethodException 方法不存在异常
+
+SQLException sql异常
+
+设计模式：程序员总结出的一套可维护性，可读性，可扩展性，稳定，安全的解决方案。
+
+单例模式：为需要多次创建的资源创建静态的实例，节省系统开销。
+
+工厂模式：简单工厂模式又叫静态工厂方法模式，就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建
+
+观察者模式：指多个对象之间存在一对多的依赖关系，当一个对象的状态发生改变，所有依赖它的对象都会受到通知进行更新。（低耦合）
+
+装饰模式：指动态地给一个对象增加一些额外的功能，同时又不改变其结构。（FileInputStream-->BuffedInputStream()）
+
+数组有length属性，而String有length()方法；
+
+byte short int long float double boolean char（占用字节数 12484812）
+String是引用类型  底层用char数组实现
+
+PreparedStatement接口继承Statement，PreparedStatement实例包含已编译的SQL语句，所以其执行速度要快于Statement对象
+Statement容易被SQL注入
+
+SQL之sql注入：
+通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。
+举例：当执行的sql为select * from user where username = “admin” or “a” = “a”时，sql语句恒成立，参数username毫无意义。
+
+防止sql注入的方式：1.预编译语句  2.Mybatis框架中的mapper方式中的#也能很大程度的防止sql注入（$无法防止sql注入）。
+
+未提交读：事务可以读取其它事务未提交的数据。
+
+已提交读：事务不可以读取其它事务未提交的数据。
+
+可重复读：保证同一个事务中的多次相同的查询的结果是一致的。
+
+串行化：可串行化就是保证读取的范围内没有新的数据插入。
+
+JDBC编程有哪些不足之处，MyBatis是如何解决这些问题的：
+数据库链接创建、释放频繁，Sql语句写在代码中造成代码不易维护，向sql语句传参数麻烦，对结果集解析麻烦
+
+Mybatis中一级缓存与二级缓存：
+ 一级缓存：基于PerpetualCache的HashMap本地缓存，其存储作用域为Session，当flush或close之后，该Session中的所有Cache就将清空。
+二级缓存与一级缓存其机制相同，默认也是采用PerpetualCache的HashMap存储，不同在于其存储作用域为namespace
+
+keyProperty”表示返回的id要保存到对象的属性中，“useGeneratedKeys”表示主键id为自增长模式。
+
+并发三要素：原子性，可见性，有序性
+
+yum install -y lrzsz（xshell内上传本地文件到linux）
+
+fasdDFS单机搭建
+https://www.cnblogs.com/youzhibing/p/9160690.html
+https://blog.csdn.net/u012448904/article/details/88689471
+
+es单机搭建
+https://www.cnblogs.com/h-kang/p/11024094.html
+https://blog.csdn.net/ooobama/article/details/95889496
+https://blog.csdn.net/jlq_diligence/article/details/118517976
+
+jenkins单机搭建
+https://blog.csdn.net/qiuyeyijian/article/details/104507440/
+
+docker安装
+https://juejin.cn/post/6868883244214026247
+
+mysql安装
+https://juejin.cn/post/6858113090832367630
+Jia_@123数据库密码
+
+CentOS定时备份
+https://www.cnblogs.com/baobeiqi-e/p/10559047.html
+
+本地项目上传GitHub
+https://www.cnblogs.com/ysource/p/10419038.html

@@ -51,8 +51,11 @@ public class UserInfoController {
             return  userInfo.toString();
         }else {
             UserInfo userInfo = userInfoService.getById(Integer.parseInt(id));
-            redisUtil.set(id,userInfo,3000);
-            return userInfo.toString();
+            if(userInfo != null){
+                redisUtil.set(id,userInfo,3000);
+                return userInfo.toString();
+            }
+            return null;
         }
     }
 

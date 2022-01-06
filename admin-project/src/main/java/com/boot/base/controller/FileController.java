@@ -25,6 +25,12 @@ public class FileController {
     @Autowired
     private CommonFileUtil fileUtil;
 
+    @RequestMapping("/goWebsite")
+    public String goWebsite(){
+        logger.info("进入官网");
+        return "/home";
+    }
+
     @RequestMapping("/goIndex")
     public String goIndex(){
         logger.info("进入主页面");
